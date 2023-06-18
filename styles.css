@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.bodys{
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #000000;
+}
+.wrappers i{
+    background: #007bff;
+    color: white;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    line-height: 46px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+.wrappers i:first-child{
+    left: -50px;
+    display: none;
+}
+.wrappers i:last-child{
+    right: -50px;
+}
+.wrappers{
+    position: relative;
+    max-width: 90vw;
+}
+.wrappers .carousel{
+ white-space: nowrap;
+ font-size: 0px;
+ overflow: hidden;
+ cursor: pointer;
+ scroll-behavior: smooth;
+}
+.carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+.carousel.dragging img{
+    pointer-events: none;
+
+}
+.carousel img{
+    height: 450px;
+    object-fit: cover;
+    margin-left: 10px;
+    width: calc(100% / 3);
+}
+.carousel img:first-child{
+    margin-left: 0px;
+}
+
+@media screen and (max-width:900px){
+    .carousel img{
+        width: calc(105% / 2);
+    }
+    
+}
+@media screen and (max-width:500px){
+    .carousel img{
+        width: 110%;
+    }
+    .wrappers i:last-child{
+       display: none;
+    }
+    .wrappers i:first-child{
+        display: none;
+     }
+    
+}
